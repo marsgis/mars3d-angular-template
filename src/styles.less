@@ -1,0 +1,90 @@
+/* You can add global styles to this file, and also import other style files */
+@import './map/mars3d/mars3d.css';
+@import "~cesium/Source/Widgets/widgets.css";
+html,body {
+  height: 100%;
+  margin: 0;
+}
+
+
+
+
+.cesium-popup-color {
+  color: #ffffff;
+}
+.cesium-popup-background {
+  background: rgba(63, 72, 84,0.9);
+}
+
+ 
+/**cesium按钮背景色*/
+.cesium-button {
+  background-color: #3f4854;
+  color: #e6e6e6;
+  fill: #e6e6e6;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+.cesium-viewer-geocoderContainer .cesium-geocoder-input {
+  background-color: rgba(63, 72, 84, 0.7);
+}
+.cesium-viewer-geocoderContainer .cesium-geocoder-input:focus {
+  background-color: rgba(63, 72, 84, 0.9);
+}
+.cesium-viewer-geocoderContainer .search-results {
+  background-color: #3f4854;
+}
+.cesium-geocoder-searchButton {
+  background-color: #3f4854;
+}
+.cesium-infoBox-title {
+  background-color: #3f4854;
+}
+.cesium-infoBox {
+  background: rgba(63, 72, 84,0.9);
+}
+
+
+/**cesium工具栏位置*/
+.cesium-viewer-toolbar {
+  top: auto;
+  left: auto;
+  right: 12px;
+  bottom:35px;
+}
+.cesium-viewer-toolbar > .cesium-toolbar-button,.cesium-navigationHelpButton-wrapper,.cesium-viewer-geocoderContainer {
+  margin-bottom: 5px;
+  float: right;
+  clear: both;
+}
+.cesium-baseLayerPicker-dropDown {
+  bottom: 0;
+  right: 40px;
+  max-height: 700px;
+  margin-bottom: 5px;
+}
+.cesium-navigation-help {
+  top:auto;
+  bottom: 0;
+  right: 40px;
+  transform-origin: right bottom;
+}
+.cesium-sceneModePicker-wrapper {
+  width:auto;
+}
+.cesium-sceneModePicker-wrapper .cesium-sceneModePicker-dropDown-icon {
+  float: left;
+  margin: 0 3px;
+}
+.cesium-viewer-geocoderContainer .search-results {
+  left: 0;
+  right: 40px;
+  width: auto;
+  z-index: 9999;
+}
+.cesium-infoBox-title {
+  background-color: #3f4854;
+}
+.cesium-infoBox {
+  top: 50px;
+  background: rgba(63, 72, 84,0.9);
+}
