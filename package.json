@@ -41,7 +41,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "axios": "^0.18.0",
-    "cesium": "^1.66",    
+    "cesium": "^1.67",    
     "@turf/turf": "^5.1.6",
     "mapv": "^2.0.34",
     "echarts": "^4.5.0",
