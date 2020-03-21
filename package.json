@@ -43,8 +43,6 @@
     "axios": "^0.18.0",
     "cesium": "^1.67",    
     "@turf/turf": "^5.1.6",
-    "mapv": "^2.0.34",
-    "echarts": "^4.5.0",
     "codelyzer": "^5.0.0",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
