@@ -41,7 +41,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "axios": "^0.18.0",
-    "cesium": "^1.73",
+    "cesium": "^1.74",
     "@turf/turf": "^5.1.6",
     "codelyzer": "^5.0.0",
     "jasmine-core": "~3.4.0",
