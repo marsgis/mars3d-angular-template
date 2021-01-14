@@ -69,7 +69,7 @@ export class AppComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     getMapConfig().then(data => {
       // tslint:disable-next-line:prefer-const
-      let viewer = createMap('cesiumContainer', data);
+      let viewer = createMap('mars3dContainer', data);
       this.addPointToMap(viewer);
     });
   }
