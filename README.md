@@ -8,7 +8,7 @@ import * as Cesium from 'cesium/Source/Cesium';
 import mars3d from "./mars3d/mars3d";
 ```
 
- 其他技术栈，请参考 [Mars3D开源导航](https://github.com/marsgis/MarsGIS-for-Cesium)
+ 其他技术栈，请参考 [Mars3D开源导航](https://github.com/marsgis/mars3d)
  
 
 ## 运行效果 
@@ -43,8 +43,8 @@ import mars3d from "./mars3d/mars3d";
 
  
 
-### 与[mars3d-simple-angular](https://github.com/marsgis/mars3d-simple-angular)仓库的区别
-1. 当前是import方式引入lib的（包含mars3d），而 mars3d-simple-angular是head静态资源引入。
+### 与[mars3d-angular-project](https://github.com/marsgis/mars3d-angular-project)仓库的区别
+1. 当前是import方式引入lib的（包含mars3d），而 mars3d-angular-project是head静态资源引入。
 2. 当前仓库使用的是npm原生的Cesium库。
 
  ## 版权说明
