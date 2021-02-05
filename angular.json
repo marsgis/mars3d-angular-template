@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "marsgis-cesium-ng": {
+    "mars3d-ng": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/marsgis-cesium-ng",
+            "outputPath": "dist/mars3d-ng",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -28,7 +28,7 @@
               "src/assets",
               {
                 "glob": "**/*",
-                "input": "node_modules/cesium/Build/Cesium",
+                "input": "node_modules/mars3d-cesium/Build/Cesium",
                 "output": "cesium"
               },
               {
@@ -39,10 +39,10 @@
             ],
             "styles": [
               "src/styles.less",
-              "node_modules/cesium/Build/Cesium/Widgets/widgets.css"
+              "node_modules/mars3d-cesium/Build/Cesium/Widgets/widgets.css"
             ],
             "scripts": [
-              "node_modules/cesium/Build/Cesium/Cesium.js"
+              "node_modules/mars3d-cesium/Build/Cesium/Cesium.js"
             ]
           },
           "configurations": {
@@ -80,18 +80,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "marsgis-cesium-ng:build"
+            "browserTarget": "mars3d-ng:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "marsgis-cesium-ng:build:production"
+              "browserTarget": "mars3d-ng:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "marsgis-cesium-ng:build"
+            "browserTarget": "mars3d-ng:build"
           }
         },
         "test": {
@@ -128,16 +128,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "marsgis-cesium-ng:serve"
+            "devServerTarget": "mars3d-ng:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "marsgis-cesium-ng:serve:production"
+              "devServerTarget": "mars3d-ng:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "marsgis-cesium-ng"
+  "defaultProject": "mars3d-ng"
 }

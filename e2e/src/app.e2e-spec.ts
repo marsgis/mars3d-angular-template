@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to marsgis-cesium-ng!');
+    expect(page.getTitleText()).toEqual('Welcome to mars3d-ng!');
   });
 
   afterEach(async () => {

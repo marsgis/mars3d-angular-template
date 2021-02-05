@@ -1,15 +1,8 @@
 {
-  "name": "mars3d-angular-cli",
-  "version": "2.0.0",
-  "description": " Mars3D三维地球-Angular脚手架",
+  "name": "mars3d-angular-template",
+  "version": "3.0.0",
+  "description": "Mars3D三维地球平台软件, Angular最简项目模版",
   "main": "index.js",
-  "keywords": [
-    "marsgis",
-    "mars3d",
-    "cesium",
-    "angular",
-    "gis"
-  ],
   "scripts": {
     "ng": "ng",
     "serve": "ng serve  --port 3003",
@@ -27,6 +20,8 @@
     "@angular/platform-browser": "~8.2.0",
     "@angular/platform-browser-dynamic": "~8.2.0",
     "@angular/router": "~8.2.0",
+    "mars3d": "^3.0.3",
+    "core-js": "^3.8.2",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
@@ -41,8 +36,6 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "axios": "^0.21.1",
-    "cesium": "^1.77",
-    "@turf/turf": "^5.1.6",
     "codelyzer": "^5.0.0",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
@@ -58,16 +51,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/marsgis/mars3d-angular-cli.git"
+    "url": "https://github.com/marsgis/mars3d-angular-template.git"
   },
   "bugs": {
-    "url": "https://github.com/marsgis/mars3d-angular-cli/issues",
+    "url": "https://github.com/marsgis/mars3d-angular-template/issues",
     "email": "wh@marsgis.cn"
   },
-  "author": {
-    "name": "火星科技",
-    "url": "http://www.marsgis.cn"
-  },
-  "license": "ISC",
-  "homepage": "https://github.com/marsgis/mars3d-angular-cli"
+  "keywords": [
+    "marsgis",
+    "mars3d",
+    "cesium",
+    "angular",
+    "gis"
+  ],
+  "author": "火星科技",
+  "license": "LGPL",
+  "homepage": "http://mars3d.cn"
 }
