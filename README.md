@@ -17,13 +17,30 @@
  运行`npm run build`来构建项目。 
 
 
+
 ## 运行效果 
  [在线Demo](http://mars3d.cn/project/vue-template/)  
 
  ![image](http://mars3d.cn/project/vue-template/screenshot.jpg)
  
 
+## 如何集成到自己已有的项目中
+1. ### 安装mars3d依赖包
+```bash
+npm install mars3d   //或  cnpm install mars3d   或  yarn add mars3d
+```
 
+2. ### 拷贝文件
+ > 场景配置文件：`public\config\config.json`
+  
+
+3. ### 配置vue.config.js 
+  参考`angular.json`修改自己项目的配置，主要看`mars3d-cesium`相关代码
+
+4. ### 创建地球 
+ 参考 `src\app\app.component.ts`文件引入Map组件和构造创建地球 
+
+ 
 
 ## Mars3D 是什么 
 > `Mars3D三维地球平台软件` 是[火星科技](http://marsgis.cn/)团队研发的二三维一体的WebGIS地图开发平台，是火星科技团队成员多年GIS开发和Cesium使用的技术沉淀。基于[Cesium](https://cesium.com/cesiumjs/)开源库和现代Web技术栈全新构建，该平台框架优化了Cesium的使用方式和增添了更多高级功能。集成了领先的开源地图库、可视化库，提供了全新的三维大数据可视化、实时流数据可视化功能，通过本产品可快速实现浏览器和移动端上美观、流畅的三维地图呈现与空间分析。
