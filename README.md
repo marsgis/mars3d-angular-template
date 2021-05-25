@@ -16,7 +16,8 @@
 ### 打包编译项目
  运行`npm run build`来构建项目。 
 
-
+### 参考
+ https://github.com/Developer-Plexscape/cesium-angular-example
 
 ## 运行效果 
  [在线Demo](http://mars3d.cn/project/vue-template/)  
@@ -34,11 +35,12 @@ npm install mars3d   //或  cnpm install mars3d   或  yarn add mars3d
  > 场景配置文件：`public\config\config.json`
   
 
-3. ### 配置vue.config.js 
+3. ### 配置angular.json 
   参考`angular.json`修改自己项目的配置，主要看`mars3d-cesium`相关代码
 
 4. ### 创建地球 
  参考 `src\app\app.component.ts`文件引入Map组件和构造创建地球 
+
 
  
 

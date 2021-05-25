@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  accessToken: '<Your access token here>'
 };
 
 /*
