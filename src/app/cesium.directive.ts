@@ -5,8 +5,8 @@ import { Directive, ElementRef, OnInit } from '@angular/core';
 import * as mars3d from 'mars3d';
 
 // 导入插件(其他插件类似，插件清单访问：http://mars3d.cn/dev/guide/start/install.html)
-// arcgis wfs服务插件
-import 'mars3d-esri'
+// echarts插件
+// import 'mars3d-echarts'
 
 // 导航球插件
 // import 'mars3d-navigation/dist/mars3d-navigation.css'//已在src\styles.less引入
