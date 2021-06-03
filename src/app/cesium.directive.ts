@@ -8,9 +8,6 @@ import * as mars3d from 'mars3d';
 // echarts插件
 // import 'mars3d-echarts'
 
-// 导航球插件
-// import 'mars3d-navigation/dist/mars3d-navigation.css'//已在src\styles.less引入
-import 'mars3d-navigation';
 
 let Cesium = mars3d.Cesium
 
