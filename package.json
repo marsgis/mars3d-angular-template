@@ -1,6 +1,6 @@
 {
   "name": "mars3d-angular-template",
-  "version": "3.0.2",
+  "version": "3.1.0",
   "description": "Mars3D平台, Angular最简项目模版",
   "scripts": {
     "ng": "ng",
@@ -20,7 +20,7 @@
     "@angular/platform-browser": "~11.0.2",
     "@angular/platform-browser-dynamic": "~11.0.2",
     "@angular/router": "~11.0.2",
-    "mars3d": "^3.0.36",
+    "mars3d": "^3.1.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
