@@ -4,7 +4,7 @@ import { Directive, ElementRef, OnInit } from '@angular/core';
 // import 'mars3d/dist/mars3d.css'  //已在src\styles.less引入
 import * as mars3d from 'mars3d';
 
-// 导入插件(其他插件类似，插件清单访问：http://mars3d.cn/dev/guide/start/install.html)
+// 导入插件(其他插件类似，插件清单访问：http://mars3d.cn/dev/guide/start/architecture.html)
 // echarts插件
 // import 'mars3d-echarts'
 
