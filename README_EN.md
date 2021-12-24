@@ -39,9 +39,8 @@
  https://github.com/Developer-Plexscape/cesium-angular-example
 
 ## Operation effect 
- [online Demo](http://mars3d.cn/project/vue-template/)  
 
- ![image](http://mars3d.cn/project/vue-template/screenshot.jpg)
+ [Online Demo](http://marsgis.gitee.io/mars3d-es5-template/)  
  
 
 ## How to integrate into your existing project
