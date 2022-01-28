@@ -101,7 +101,7 @@ export class CesiumDirective implements OnInit {
   // 以下为演示代码
   addGraphic_e01(graphicLayer) {
     let graphic = new mars3d.graphic.LabelEntity({
-      position: new mars3d.LatLngPoint(116.1, 31.0, 1000),
+      position: new mars3d.LngLatPoint(116.1, 31.0, 1000),
       style: {
         text: 'Mars3D平台',
         font_size: 25,
@@ -149,7 +149,7 @@ export class CesiumDirective implements OnInit {
 
   addGraphic_e04(graphicLayer) {
     let graphic = new mars3d.graphic.PlaneEntity({
-      position: new mars3d.LatLngPoint(116.4, 31.0, 1000),
+      position: new mars3d.LngLatPoint(116.4, 31.0, 1000),
       style: {
         plane: new Cesium.Plane(Cesium.Cartesian3.UNIT_Z, 0.0),
         dimensions: new Cesium.Cartesian2(4000.0, 4000.0),
@@ -165,7 +165,7 @@ export class CesiumDirective implements OnInit {
   //
   addGraphic_e05(graphicLayer) {
     let graphic = new mars3d.graphic.BoxEntity({
-      position: new mars3d.LatLngPoint(116.5, 31.0, 1000),
+      position: new mars3d.LngLatPoint(116.5, 31.0, 1000),
       style: {
         dimensions: new Cesium.Cartesian3(2000.0, 2000.0, 2000.0),
         fill: true,
@@ -214,7 +214,7 @@ export class CesiumDirective implements OnInit {
   //
   addGraphic_e08(graphicLayer) {
     let graphic = new mars3d.graphic.EllipsoidEntity({
-      position: new mars3d.LatLngPoint(116.3, 30.9, 1000),
+      position: new mars3d.LngLatPoint(116.3, 30.9, 1000),
       style: {
         radii: new Cesium.Cartesian3(1500.0, 1500.0, 1500.0),
         material: Cesium.Color.RED.withAlpha(0.5),
