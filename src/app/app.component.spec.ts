@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { CesiumDirective } from './cesium.directive';
+import { Mars3dDirective } from './mars3d.directive';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -21,8 +21,8 @@ describe('AppComponent', () => {
     expect(component).toBeDefined();
   });
 
-  it('should have a Cesium element', () => {
-    const de = fixture.debugElement.query(By.directive(CesiumDirective));
+  it('should have a Mars3d element', () => {
+    const de = fixture.debugElement.query(By.directive(Mars3dDirective));
     expect(de).toBeDefined();
   });
 });

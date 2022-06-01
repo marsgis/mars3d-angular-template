@@ -1,6 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~mars3d-cesium/Build/Cesium/Widgets/widgets.css";
-@import '~mars3d/dist/mars3d.css';
 
 html, body, div[appCesium] {
   width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden;
@@ -10,43 +8,103 @@ html, body, div[appCesium] {
 
 /* 重写Cesium的css */
 
-/**cesium按钮背景色*/
+/**cesium 工具按钮栏*/
+.cesium-viewer-toolbar {
+  top: auto !important;
+  bottom: 35px !important;
+  left: 12px !important;
+  right: auto !important;
+}
+.cesium-toolbar-button img {
+  height: 100%;
+}
+.cesium-viewer-toolbar > .cesium-toolbar-button,
+.cesium-navigationHelpButton-wrapper,
+.cesium-viewer-geocoderContainer {
+  margin-bottom: 5px;
+  float: left;
+  clear: both;
+  text-align: center;
+}
 .cesium-button {
-  background-color: #3f4854;
+  background-color: @mars-bg-base;
   color: #e6e6e6;
   fill: #e6e6e6;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
   line-height: 32px;
 }
+.cesium-button:hover {
+  background: @mars-hover-btn-bg;
+}
 
+/**cesium 底图切换面板*/
+.cesium-baseLayerPicker-dropDown {
+  bottom: 0;
+  left: 40px;
+  max-height: 700px;
+  margin-bottom: 5px;
+  background-color: @mars-bg-base;
+}
+
+/**cesium 帮助面板*/
+.cesium-navigation-help {
+  top: auto;
+  bottom: 0;
+  left: 40px;
+  transform-origin: left bottom;
+  background: none;
+  background-color: @mars-bg-base;
+  .cesium-navigation-help-instructions {
+    background: none;
+  }
+  .cesium-navigation-button {
+    background: none;
+  }
+  .cesium-navigation-button-selected,
+  .cesium-navigation-button-unselected:hover {
+    background: @mars-select-bg;
+  }
+}
+
+/**cesium 二维三维切换*/
+.cesium-sceneModePicker-wrapper {
+  width: auto;
+}
+.cesium-sceneModePicker-wrapper .cesium-sceneModePicker-dropDown-icon {
+  float: right;
+  margin: 0 3px;
+}
+
+/**cesium POI查询输入框*/
+.cesium-viewer-geocoderContainer .search-results {
+  left: 0;
+  right: 40px;
+  width: auto;
+  z-index: 9999;
+}
+.cesium-geocoder-searchButton {
+  background-color: @mars-bg-base;
+}
 .cesium-viewer-geocoderContainer .cesium-geocoder-input {
   background-color: rgba(63, 72, 84, 0.7);
 }
-
 .cesium-viewer-geocoderContainer .cesium-geocoder-input:focus {
   background-color: rgba(63, 72, 84, 0.9);
 }
-
 .cesium-viewer-geocoderContainer .search-results {
-  background-color: #3f4854;
+  background-color: @mars-bg-base;
 }
 
-.cesium-geocoder-searchButton {
-  background-color: #3f4854;
-}
-
-.cesium-infoBox-title {
-  background-color: #3f4854;
-}
-
+/**cesium info信息框*/
 .cesium-infoBox {
-  background: rgba(63, 72, 84, 0.9);
+  top: 50px;
+  background-color: @mars-bg-base;
+}
+.cesium-infoBox-title {
+  background-color: @mars-bg-base;
 }
 
-.cesium-toolbar-button img {
-  height: 100%;
-}
-
+/**cesium 任务栏的FPS信息*/
 .cesium-performanceDisplay-defaultContainer {
   top: auto;
   bottom: 35px;
@@ -57,106 +115,56 @@ html, body, div[appCesium] {
   color: #fff;
 }
 
-/**cesium工具栏位置*/
-.cesium-viewer-toolbar {
-  top: auto;
-  left: auto;
-  right: 12px;
-  bottom: 35px;
-  top:auto;
+/**cesium tileset调试信息面板*/
+.cesium-viewer-cesiumInspectorContainer {
+  top: 10px;
+  left: 10px;
+  right: auto;
+}
+.cesium-cesiumInspector {
+  background-color: @mars-bg-base;
 }
 
-.cesium-viewer-toolbar > .cesium-toolbar-button,
-.cesium-navigationHelpButton-wrapper,
-.cesium-viewer-geocoderContainer {
-  margin-bottom: 5px;
-  float: right;
-  clear: both;
-  text-align: center;
+/**覆盖mars3d内部控件的颜色等样式*/
+.mars3d-compass .mars3d-compass-outer {
+  fill: @mars-bg-base;
+}
+.mars3d-contextmenu-ul,
+.mars3d-sub-menu {
+  background-color: @mars-bg-base;
+
+  > li > a:hover,
+  > li > a:focus,
+  > li > .active {
+    background-color: @mars-hover-btn-bg;
+  }
+
+  > .active > a,
+  > .active > a:hover,
+  > .active > a:focus {
+    background-color: @mars-hover-btn-bg;
+  }
 }
 
-.cesium-baseLayerPicker-dropDown {
-  bottom: 0;
-  right: 40px;
-  max-height: 700px;
-  margin-bottom: 5px;
+/* Popup样式*/
+.mars3d-popup-color {
+  color: @mars-base-color;
+}
+.mars3d-popup-background {
+  background: @mars-bg-base;
+}
+.mars3d-template-content label {
+  padding-right: 6px;
+}
+.mars3d-template-titile {
+  border-bottom: 1px solid @mars-hover-btn-bg;
+}
+.mars3d-template-titile a {
+  font-size: 16px;
 }
 
-.cesium-navigation-help {
-  top: auto;
-  bottom: 0;
-  right: 40px;
-  transform-origin: right bottom;
-}
-
-.cesium-sceneModePicker-wrapper {
-  width: auto;
-}
-
-.cesium-sceneModePicker-wrapper .cesium-sceneModePicker-dropDown-icon {
-  float: left;
-  margin: 0 3px;
-}
-
-.cesium-viewer-geocoderContainer .search-results {
-  left: 0;
-  right: 40px;
-  width: auto;
-  z-index: 9999;
-}
-
-.cesium-infoBox-title {
-  background-color: #3f4854;
-}
-
-.cesium-infoBox {
-  top: 50px;
-  background: rgba(63, 72, 84, 0.9);
-}
-
-/**左下工具栏菜单*/
-.toolbar-dropdown-menu-div {
-  background: rgba(43, 44, 47, 0.8);
-  border: 1px solid #2b2c2f;
-  z-index: 991;
-  position: absolute;
-  right: 60px;
-  bottom: 40px;
-  display: none;
-}
-
-.toolbar-dropdown-menu {
-  min-width: 110px;
-  padding: 0;
-}
-.toolbar-dropdown-menu > li {
-  padding: 0 3px;
-  margin: 2px 0;
-}
-.toolbar-dropdown-menu > li > a {
-  color: #edffff;
-  display: block;
-  padding: 4px 10px;
-  clear: both;
-  font-weight: normal;
-  line-height: 1.6;
-  white-space: nowrap;
-  text-decoration: none;
-}
-
-.toolbar-dropdown-menu > li > a:hover,
-.dropdown-menu > li > a:focus {
-  color: #fff;
-  background-color: #444d59;
-}
-
-.toolbar-dropdown-menu > .active > a,
-.dropdown-menu > .active > a:hover,
-.dropdown-menu > .active > a:focus {
-  color: #fff;
-  background-color: #444d59;
-}
-
-.toolbar-dropdown-menu i {
-  padding-right: 5px;
+.mars3d-popup-btn-custom {
+  padding: 3px 10px;
+  border: 1px solid #209ffd;
+  background: #209ffd1c;
 }

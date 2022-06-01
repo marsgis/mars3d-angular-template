@@ -1,48 +1,35 @@
 import { Directive, ElementRef, OnInit } from '@angular/core';
-// import { Viewer } from 'cesium';
-// 使用免费开源版本
-// import 'mars3d/dist/mars3d.css'  //已在src\styles.less引入
 import * as mars3d from 'mars3d';
-
-// 导入插件(其他插件类似，插件清单访问：http://mars3d.cn/dev/guide/start/architecture.html)
-// echarts插件
-// import 'mars3d-echarts'
-
 
 let Cesium = mars3d.Cesium
 
 @Directive({
   selector: '[appCesium]'
 })
-export class CesiumDirective implements OnInit {
+export class Mars3dDirective implements OnInit {
 
   constructor(private el: ElementRef) { }
 
   ngOnInit(): void {
-    this.el.nativeElement.id ="mars3dContainer"
-    // const viewer = new Viewer(this.el.nativeElement);
-
     //读取 config.json 配置文件
     let configUrl = 'config/config.json'
-    mars3d.Resource.fetchJson({ url: configUrl })
+    mars3d.Util.fetchJson({ url: configUrl })
       .then((data) => {
         var mapOptions = data.map3d
         // 创建三维地球场景
-        var map = new mars3d.Map("mars3dContainer", mapOptions)
+        const map = new mars3d.Map(this.el.nativeElement, mapOptions)
+        this.onMapload(map)
 
         console.log('>>>>> 地图创建成功 >>>>', map)
-
-        this.onMapload(map)
       })
-      .otherwise(function (error) {
+      .catch(function (error) {
         console.log('加载JSON出错', error)
       })
-
   }
 
 
   // 地图构造完成回调
-  onMapload(map) {
+  onMapload(map: mars3d.Map) {
     // 以下为演示代码
 
     // 创建entity图层
@@ -69,7 +56,7 @@ export class CesiumDirective implements OnInit {
     graphicLayer.bindContextMenu([
       {
         text: '删除对象',
-        iconCls: 'fa fa-trash-o',
+        icon: 'fa fa-trash-o',
         callback: function (e) {
           const graphic = e.graphic
           if (graphic) {
@@ -97,9 +84,8 @@ export class CesiumDirective implements OnInit {
     this.addGraphic_e15(graphicLayer)
   }
 
-
   // 以下为演示代码
-  addGraphic_e01(graphicLayer) {
+  addGraphic_e01(graphicLayer: mars3d.layer.GraphicLayer) {
     let graphic = new mars3d.graphic.LabelEntity({
       position: new mars3d.LngLatPoint(116.1, 31.0, 1000),
       style: {
@@ -118,7 +104,7 @@ export class CesiumDirective implements OnInit {
     graphicLayer.addGraphic(graphic)
   }
 
-  addGraphic_e02(graphicLayer) {
+  addGraphic_e02(graphicLayer: mars3d.layer.GraphicLayer) {
     let graphic = new mars3d.graphic.PointEntity({
       position: [116.2, 31.0, 1000],
       style: {
@@ -132,7 +118,7 @@ export class CesiumDirective implements OnInit {
     graphicLayer.addGraphic(graphic)
   }
 
-  addGraphic_e03(graphicLayer) {
+  addGraphic_e03(graphicLayer: mars3d.layer.GraphicLayer) {
     let graphic = new mars3d.graphic.BillboardEntity({
       name: '贴地图标',
       position: [116.3, 31.0, 1000],
@@ -147,7 +133,7 @@ export class CesiumDirective implements OnInit {
     graphicLayer.addGraphic(graphic)
   }
 
-  addGraphic_e04(graphicLayer) {
+  addGraphic_e04(graphicLayer: mars3d.layer.GraphicLayer) {
     let graphic = new mars3d.graphic.PlaneEntity({
       position: new mars3d.LngLatPoint(116.4, 31.0, 1000),
       style: {
@@ -163,7 +149,7 @@ export class CesiumDirective implements OnInit {
   }
 
   //
-  addGraphic_e05(graphicLayer) {
+  addGraphic_e05(graphicLayer: mars3d.layer.GraphicLayer) {
     let graphic = new mars3d.graphic.BoxEntity({
       position: new mars3d.LngLatPoint(116.5, 31.0, 1000),
       style: {
@@ -179,7 +165,7 @@ export class CesiumDirective implements OnInit {
     graphicLayer.addGraphic(graphic)
   }
 
-  addGraphic_e06(graphicLayer) {
+  addGraphic_e06(graphicLayer: mars3d.layer.GraphicLayer) {
     let graphic = new mars3d.graphic.CircleEntity({
       position: [116.1, 30.9, 1000],
       style: {
@@ -196,7 +182,7 @@ export class CesiumDirective implements OnInit {
     graphicLayer.addGraphic(graphic)
   }
 
-  addGraphic_e07(graphicLayer) {
+  addGraphic_e07(graphicLayer: mars3d.layer.GraphicLayer) {
     let graphic = new mars3d.graphic.CylinderEntity({
       position: [116.2, 30.9, 1000],
       style: {
@@ -212,20 +198,20 @@ export class CesiumDirective implements OnInit {
   }
 
   //
-  addGraphic_e08(graphicLayer) {
-    let graphic = new mars3d.graphic.EllipsoidEntity({
-      position: new mars3d.LngLatPoint(116.3, 30.9, 1000),
-      style: {
-        radii: new Cesium.Cartesian3(1500.0, 1500.0, 1500.0),
-        material: Cesium.Color.RED.withAlpha(0.5),
-        outline: true,
-        outlineColor: Cesium.Color.WHITE.withAlpha(0.3),
-      },
-    })
-    graphicLayer.addGraphic(graphic)
+  addGraphic_e08(graphicLayer: mars3d.layer.GraphicLayer) {
+    // let graphic = new mars3d.graphic.EllipsoidEntity({
+    //   position: new mars3d.LngLatPoint(116.3, 30.9, 1000),
+    //   style: {
+    //     radii: new Cesium.Cartesian3(1500.0, 1500.0, 1500.0),
+    //     material: Cesium.Color.RED.withAlpha(0.5),
+    //     outline: true,
+    //     outlineColor: Cesium.Color.WHITE.withAlpha(0.3),
+    //   },
+    // })
+    // graphicLayer.addGraphic(graphic)
   }
 
-  addGraphic_e09(graphicLayer) {
+  addGraphic_e09(graphicLayer: mars3d.layer.GraphicLayer) {
     let graphic = new mars3d.graphic.ModelEntity({
       name: '消防员',
       position: [116.4, 30.9, 1000],
@@ -238,7 +224,7 @@ export class CesiumDirective implements OnInit {
     graphicLayer.addGraphic(graphic)
   }
 
-  addGraphic_e10(graphicLayer) {
+  addGraphic_e10(graphicLayer: mars3d.layer.GraphicLayer) {
     let graphic = new mars3d.graphic.PolylineEntity({
       positions: [
         [116.5, 30.9, 1000],
@@ -250,10 +236,10 @@ export class CesiumDirective implements OnInit {
         color: '#3388ff',
       },
     })
-    graphicLayer.addGraphic(graphic) //还可以另外一种写法: graphic.addTo(graphicLayer)
+    graphicLayer.addGraphic(graphic) //还可以另外一种写法: graphic.addTo(graphicLayer:mars3d.layer.GraphicLayer)
   }
 
-  addGraphic_e11(graphicLayer) {
+  addGraphic_e11(graphicLayer: mars3d.layer.GraphicLayer) {
     let graphic = new mars3d.graphic.PolylineVolumeEntity({
       positions: [
         [116.1, 30.8, 1000],
@@ -267,10 +253,10 @@ export class CesiumDirective implements OnInit {
         opacity: 0.9,
       },
     })
-    graphicLayer.addGraphic(graphic) //还可以另外一种写法: graphic.addTo(graphicLayer)
+    graphicLayer.addGraphic(graphic) //还可以另外一种写法: graphic.addTo(graphicLayer:mars3d.layer.GraphicLayer)
   }
 
-  addGraphic_e12(graphicLayer) {
+  addGraphic_e12(graphicLayer: mars3d.layer.GraphicLayer) {
     let graphic = new mars3d.graphic.CorridorEntity({
       positions: [
         [116.2, 30.8, 1000],
@@ -283,10 +269,10 @@ export class CesiumDirective implements OnInit {
         color: '#3388ff',
       },
     })
-    graphicLayer.addGraphic(graphic) //还可以另外一种写法: graphic.addTo(graphicLayer)
+    graphicLayer.addGraphic(graphic) //还可以另外一种写法: graphic.addTo(graphicLayer:mars3d.layer.GraphicLayer)
   }
 
-  addGraphic_e13(graphicLayer) {
+  addGraphic_e13(graphicLayer: mars3d.layer.GraphicLayer) {
     let graphic = new mars3d.graphic.WallEntity({
       positions: [
         [116.3, 30.8, 1000],
@@ -306,10 +292,10 @@ export class CesiumDirective implements OnInit {
         }),
       },
     })
-    graphicLayer.addGraphic(graphic) //还可以另外一种写法: graphic.addTo(graphicLayer)
+    graphicLayer.addGraphic(graphic) //还可以另外一种写法: graphic.addTo(graphicLayer:mars3d.layer.GraphicLayer)
   }
 
-  addGraphic_e14(graphicLayer) {
+  addGraphic_e14(graphicLayer: mars3d.layer.GraphicLayer) {
     let graphic = new mars3d.graphic.RectangleEntity({
       positions: [
         [116.383144, 30.819978, 444.42],
@@ -324,10 +310,10 @@ export class CesiumDirective implements OnInit {
         outlineColor: '#ffffff',
       },
     })
-    graphicLayer.addGraphic(graphic) //还可以另外一种写法: graphic.addTo(graphicLayer)
+    graphicLayer.addGraphic(graphic) //还可以另外一种写法: graphic.addTo(graphicLayer:mars3d.layer.GraphicLayer)
   }
 
-  addGraphic_e15(graphicLayer) {
+  addGraphic_e15(graphicLayer: mars3d.layer.GraphicLayer) {
     let graphic = new mars3d.graphic.PolygonEntity({
       positions: [
         [116.510278, 30.834372, 567.29],
@@ -347,7 +333,7 @@ export class CesiumDirective implements OnInit {
         }),
       },
     })
-    graphicLayer.addGraphic(graphic) //还可以另外一种写法: graphic.addTo(graphicLayer)
+    graphicLayer.addGraphic(graphic) //还可以另外一种写法: graphic.addTo(graphicLayer:mars3d.layer.GraphicLayer)
   }
 
 }

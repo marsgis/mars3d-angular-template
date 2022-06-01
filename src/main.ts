@@ -1,6 +1,5 @@
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-// import { Ion } from 'cesium';
 
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
@@ -9,10 +8,8 @@ if (environment.production) {
   enableProdMode();
 }
 
-// tslint:disable-next-line: no-string-literal
-window['CESIUM_BASE_URL'] = '/assets/cesium/';
+(window as Record<string, any>)['CESIUM_BASE_URL'] = '/assets/mars3d-cesium/';
 
-// Ion.defaultAccessToken = environment.accessToken;
 
 platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.log(err));
+  .catch(err => console.error(err));
