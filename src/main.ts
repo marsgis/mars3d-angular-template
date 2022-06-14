@@ -8,8 +8,6 @@ if (environment.production) {
   enableProdMode();
 }
 
-(window as Record<string, any>)['CESIUM_BASE_URL'] = '/assets/mars3d-cesium/';
-
 
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
