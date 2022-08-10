@@ -19,7 +19,6 @@
     "@angular/platform-browser": "~13.3.9",
     "@angular/platform-browser-dynamic": "~13.3.9",
     "@angular/router": "~13.3.9",
-    "mars3d-cesium": "^1.95.1",
     "mars3d": "^3.4.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
