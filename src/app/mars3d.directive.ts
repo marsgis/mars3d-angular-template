@@ -14,8 +14,7 @@ export class Mars3dDirective implements OnInit {
     //读取 config.json 配置文件
     let configUrl = 'config/config.json'
     mars3d.Util.fetchJson({ url: configUrl })
-      .then((data) => {
-        var mapOptions = data.map3d
+      .then((mapOptions) => {
         // 创建三维地球场景
         const map = new mars3d.Map(this.el.nativeElement, mapOptions)
         this.onMapload(map)
