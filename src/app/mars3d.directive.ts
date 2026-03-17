@@ -88,7 +88,7 @@ export class Mars3dDirective implements OnInit {
     const graphic = new mars3d.graphic.LabelEntity({
       position: new mars3d.LngLatPoint(116.1, 31.0, 1000),
       style: {
-        text: "火星科技Mars3D平台",
+        text: "欢迎使用Mars3D平台",
         font_size: 25,
         font_family: "楷体",
         color: "#003da6",
